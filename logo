@@ -1,0 +1,136 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package project;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JWindow;
+import javax.swing.Timer;
+
+/**
+ *
+ * @author Asus
+ */
+public class LOGO extends JWindow{
+    JProgressBar jProgressBar1=new JProgressBar();
+    JLabel jLabel1,jLabel2;
+    static Dimension dim;
+    int d=4550;
+    JPanel jPanel1;
+public  LOGO(){
+        
+       
+        Panel p = new Panel();
+        p.setSize(400, 400);
+
+        
+        
+     
+        add(p,BorderLayout.CENTER);   
+this.setVisible(true);
+this.setLocationRelativeTo(null);
+this.setSize(480,360);
+dim=Toolkit.getDefaultToolkit().getScreenSize();
+this.setLocation(dim.width/2-this.getSize().width/2,dim.height/2-this.getSize().height/2);
+        jPanel1 = new javax.swing.JPanel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+
+
+        setSize(new java.awt.Dimension(472, 389));
+
+        jPanel1.setBackground(new java.awt.Color(245, 255, 250));
+
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(224, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(208, 208, 208)
+                        ));
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(357, 357, 357)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jLabel1))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+}
+}
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package project;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+import static project.LOGO.dim;
+
+/**
+ *
+ * @author Asus
+ */
+public class PROJECT {
+ static Dimension dim;
+    
+    public static void main(String[] args) {
+    LOGO p=new LOGO();
+    
+    p.setVisible(true);
+     LOGIN l= new LOGIN();
+     dim=Toolkit.getDefaultToolkit().getScreenSize();
+    l.setLocation(dim.width/2-l.getSize().width/2,dim.height/2-l.getSize().height/2);
+     try{
+       for(int i=0;i<=100;i++){
+       Thread.sleep(40);
+       p.jProgressBar1.setValue(i);
+       p.jLabel1.setText(Integer.toString(i)+("%"));
+       }}
+       catch(Exception e){}
+     new LOGO().setVisible(false);
+     l.setVisible(true);
+     p.dispose();
+    }
+    
+}
