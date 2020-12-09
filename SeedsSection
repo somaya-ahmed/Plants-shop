@@ -1,0 +1,2345 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package project;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author SAMEH
+ */
+public class SeedsSection extends javax.swing.JFrame {
+   private int amount; 
+   private int currentRow;
+   Connection connection = null;
+   Statement statement = null;
+   ResultSet resultset = null;
+   String query , URL, password,username;
+   int no = 1;
+    public SeedsSection() {
+        initComponents();
+        ImageIcon logo =new ImageIcon(getClass().getResource("icon.jpg"));
+   this.setIconImage(logo.getImage());
+    }
+public void doconnect(){
+        try{
+    URL ="jdbc:mysql://localhost:3306/shop";
+    username="root";
+    password="1234";
+    
+    
+    connection = DriverManager.getConnection(URL, username, password);
+    statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+   
+    }
+    catch (SQLException ex){
+    JOptionPane.showMessageDialog(this,ex);
+    }
+    }
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        jButton35 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
+        jLabel52 = new javax.swing.JLabel();
+        jTextField18 = new javax.swing.JTextField();
+        jCheckBox18 = new javax.swing.JCheckBox();
+        jLabel53 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        jButton41 = new javax.swing.JButton();
+        jButton42 = new javax.swing.JButton();
+        jLabel61 = new javax.swing.JLabel();
+        jTextField21 = new javax.swing.JTextField();
+        jCheckBox21 = new javax.swing.JCheckBox();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jCheckBox14 = new javax.swing.JCheckBox();
+        jLabel41 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jCheckBox15 = new javax.swing.JCheckBox();
+        jLabel44 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel54 = new javax.swing.JLabel();
+        jButton37 = new javax.swing.JButton();
+        jButton38 = new javax.swing.JButton();
+        jLabel55 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jCheckBox19 = new javax.swing.JCheckBox();
+        jLabel56 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        jButton39 = new javax.swing.JButton();
+        jButton40 = new javax.swing.JButton();
+        jLabel58 = new javax.swing.JLabel();
+        jTextField20 = new javax.swing.JTextField();
+        jCheckBox20 = new javax.swing.JCheckBox();
+        jLabel59 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel63 = new javax.swing.JLabel();
+        jButton43 = new javax.swing.JButton();
+        jButton44 = new javax.swing.JButton();
+        jLabel64 = new javax.swing.JLabel();
+        jTextField22 = new javax.swing.JTextField();
+        jCheckBox22 = new javax.swing.JCheckBox();
+        jLabel65 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel66 = new javax.swing.JLabel();
+        jButton45 = new javax.swing.JButton();
+        jButton46 = new javax.swing.JButton();
+        jLabel67 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
+        jCheckBox23 = new javax.swing.JCheckBox();
+        jLabel68 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
+        jLabel46 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
+        jCheckBox16 = new javax.swing.JCheckBox();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        jButton33 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+        jLabel49 = new javax.swing.JLabel();
+        jTextField17 = new javax.swing.JTextField();
+        jCheckBox17 = new javax.swing.JCheckBox();
+        jLabel50 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Plants Shop");
+        setResizable(false);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel21.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel21.setText("VINCA SEEDS");
+
+        jButton15.setBackground(new java.awt.Color(255, 255, 255));
+        jButton15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(51, 51, 51));
+        jButton15.setText("-");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setForeground(new java.awt.Color(51, 51, 51));
+        jButton16.setText("+");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel22.setText("17 SR");
+
+        jTextField8.setColumns(3);
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField8.setText("1");
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox8.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox8.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox8.setText("Add to Cart");
+        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox8ActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/2020-11-11_21h11_32.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox8)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel22)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jButton15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton16)))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel21)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel21)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton16)
+                    .addComponent(jTextField8)
+                    .addComponent(jButton15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel51.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel51.setText("POPPY SEEDS");
+
+        jButton35.setBackground(new java.awt.Color(255, 255, 255));
+        jButton35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton35.setForeground(new java.awt.Color(51, 51, 51));
+        jButton35.setText("-");
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
+
+        jButton36.setForeground(new java.awt.Color(51, 51, 51));
+        jButton36.setText("+");
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
+
+        jLabel52.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel52.setText("17 SR");
+
+        jTextField18.setColumns(3);
+        jTextField18.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField18.setText("1");
+        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField18ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox18.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox18.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox18.setText("Add to Cart");
+        jCheckBox18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox18ActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/2020-11-11_21h12_04.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox18)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel52)
+                            .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addComponent(jButton35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton36)))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel51)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel51)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton36)
+                    .addComponent(jTextField18)
+                    .addComponent(jButton35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel21.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel60.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel60.setText("POPPY LAUREN'S GRAPE SEEDS");
+
+        jButton41.setBackground(new java.awt.Color(255, 255, 255));
+        jButton41.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton41.setForeground(new java.awt.Color(51, 51, 51));
+        jButton41.setText("-");
+        jButton41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton41ActionPerformed(evt);
+            }
+        });
+
+        jButton42.setForeground(new java.awt.Color(51, 51, 51));
+        jButton42.setText("+");
+        jButton42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton42ActionPerformed(evt);
+            }
+        });
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel61.setText("17 SR");
+
+        jTextField21.setColumns(3);
+        jTextField21.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField21.setText("1");
+        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField21ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox21.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox21.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox21.setText("Add to Cart");
+        jCheckBox21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox21ActionPerformed(evt);
+            }
+        });
+
+        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/0cf888af8fbcfabf994d41acf807f452.jpg"))); // NOI18N
+
+        jLabel69.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel62)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox21)
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addComponent(jButton41)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jLabel61)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel69)
+                                        .addGap(55, 55, 55))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton42)))))
+                        .addGap(47, 47, 47))))
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addComponent(jLabel60)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel62)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel61)
+                    .addComponent(jLabel69))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton42)
+                    .addComponent(jTextField21)
+                    .addComponent(jButton41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox21))
+        );
+
+        jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel24.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel24.setText("BLACK-EYED SUSAN VINE SEEDS");
+
+        jButton17.setBackground(new java.awt.Color(255, 255, 255));
+        jButton17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(51, 51, 51));
+        jButton17.setText("-");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton18.setForeground(new java.awt.Color(51, 51, 51));
+        jButton18.setText("+");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel25.setText("17 SR");
+
+        jTextField9.setColumns(3);
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField9.setText("1");
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox9.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox9.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox9.setText("Add to Cart");
+        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox9ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/Container Landscaping For A More Unique Look.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox9)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel25)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jButton17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton18)))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel26)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton18)
+                    .addComponent(jTextField9)
+                    .addComponent(jButton17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel39.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel39.setText("AGERATUM SEEDS");
+
+        jButton27.setBackground(new java.awt.Color(255, 255, 255));
+        jButton27.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton27.setForeground(new java.awt.Color(51, 51, 51));
+        jButton27.setText("-");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton28.setForeground(new java.awt.Color(51, 51, 51));
+        jButton28.setText("+");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel40.setText("17 SR");
+
+        jTextField14.setColumns(3);
+        jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField14.setText("1");
+        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField14ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox14.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox14.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox14.setText("Add to Cart");
+        jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox14ActionPerformed(evt);
+            }
+        });
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/2020-11-11_21h11_45.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox14)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel40)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jButton27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton28))
+                    .addComponent(jLabel39))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel39)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton28)
+                    .addComponent(jTextField14)
+                    .addComponent(jButton27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel42.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel42.setText("PETUNIA SEEDS");
+
+        jButton29.setBackground(new java.awt.Color(255, 255, 255));
+        jButton29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton29.setForeground(new java.awt.Color(51, 51, 51));
+        jButton29.setText("-");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setForeground(new java.awt.Color(51, 51, 51));
+        jButton30.setText("+");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel43.setText("17 SR");
+
+        jTextField15.setColumns(3);
+        jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField15.setText("1");
+        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField15ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox15.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox15.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox15.setText("Add to Cart");
+        jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox15ActionPerformed(evt);
+            }
+        });
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/2020-11-11_21h11_11.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox15)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel43)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jButton29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton30))
+                    .addComponent(jLabel42))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel42)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton30)
+                    .addComponent(jTextField15)
+                    .addComponent(jButton29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox15))
+        );
+
+        jPanel19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel54.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel54.setText("CALIFORNIA POPPY SEEDS");
+
+        jButton37.setBackground(new java.awt.Color(255, 255, 255));
+        jButton37.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton37.setForeground(new java.awt.Color(51, 51, 51));
+        jButton37.setText("-");
+        jButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton37ActionPerformed(evt);
+            }
+        });
+
+        jButton38.setForeground(new java.awt.Color(51, 51, 51));
+        jButton38.setText("+");
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton38ActionPerformed(evt);
+            }
+        });
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel55.setText("17 SR");
+
+        jTextField19.setColumns(3);
+        jTextField19.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField19.setText("1");
+        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField19ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox19.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox19.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox19.setText("Add to Cart");
+        jCheckBox19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox19ActionPerformed(evt);
+            }
+        });
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/2020-11-11_21h12_20.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox19)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel55)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jButton37)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton38)))
+                .addGap(47, 47, 47))
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(32, 32, 32))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel54)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel54)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton38)
+                    .addComponent(jTextField19)
+                    .addComponent(jButton37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox19)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel57.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel57.setText("SWEET PEA SEEDS");
+
+        jButton39.setBackground(new java.awt.Color(255, 255, 255));
+        jButton39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton39.setForeground(new java.awt.Color(51, 51, 51));
+        jButton39.setText("-");
+        jButton39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton39ActionPerformed(evt);
+            }
+        });
+
+        jButton40.setForeground(new java.awt.Color(51, 51, 51));
+        jButton40.setText("+");
+        jButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton40ActionPerformed(evt);
+            }
+        });
+
+        jLabel58.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel58.setText("17 SR");
+
+        jTextField20.setColumns(3);
+        jTextField20.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField20.setText("1");
+        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField20ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox20.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox20.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox20.setText("Add to Cart");
+        jCheckBox20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox20ActionPerformed(evt);
+            }
+        });
+
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/2020-11-11_21h12_14.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox20)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel58)
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addComponent(jButton39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton40)))
+                .addGap(47, 47, 47))
+            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel57)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel57)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel58)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton40)
+                    .addComponent(jTextField20)
+                    .addComponent(jButton39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox20)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel63.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel63.setText("SCABIOSA PINCUSHION SEEDS");
+
+        jButton43.setBackground(new java.awt.Color(255, 255, 255));
+        jButton43.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton43.setForeground(new java.awt.Color(51, 51, 51));
+        jButton43.setText("-");
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
+
+        jButton44.setForeground(new java.awt.Color(51, 51, 51));
+        jButton44.setText("+");
+        jButton44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton44ActionPerformed(evt);
+            }
+        });
+
+        jLabel64.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel64.setText("17 SR");
+
+        jTextField22.setColumns(3);
+        jTextField22.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField22.setText("1");
+        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField22ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox22.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox22.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox22.setText("Add to Cart");
+        jCheckBox22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox22ActionPerformed(evt);
+            }
+        });
+
+        jLabel65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/Isaac House Blend Pincushion Flower - 300 mg - Scabiosa.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox22)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel64)
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addComponent(jButton43)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton44)))
+                .addGap(31, 31, 31))
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addComponent(jLabel65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton44)
+                    .addComponent(jTextField22)
+                    .addComponent(jButton43))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox22)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel23.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel66.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel66.setText("CALENDULA SEEDS");
+
+        jButton45.setBackground(new java.awt.Color(255, 255, 255));
+        jButton45.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton45.setForeground(new java.awt.Color(51, 51, 51));
+        jButton45.setText("-");
+        jButton45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton45ActionPerformed(evt);
+            }
+        });
+
+        jButton46.setForeground(new java.awt.Color(51, 51, 51));
+        jButton46.setText("+");
+        jButton46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton46ActionPerformed(evt);
+            }
+        });
+
+        jLabel67.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel67.setText("17 SR");
+
+        jTextField23.setColumns(3);
+        jTextField23.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField23.setText("1");
+        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField23ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox23.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox23.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox23.setText("Add to Cart");
+        jCheckBox23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox23ActionPerformed(evt);
+            }
+        });
+
+        jLabel68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/Flower Seeds - 450 mg Seeds of Organic Resina Calendula_Pot Marigold Seeds.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox23)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel67)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(jButton45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton46)))
+                .addGap(32, 32, 32))
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addComponent(jLabel68)
+                .addGap(0, 2, Short.MAX_VALUE))
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel66)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel68)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel66)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel67)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton46)
+                    .addComponent(jTextField23)
+                    .addComponent(jButton45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox23)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel45.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel45.setText("CALIFORNIA POPPY MIKADO ");
+
+        jButton31.setBackground(new java.awt.Color(255, 255, 255));
+        jButton31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton31.setForeground(new java.awt.Color(51, 51, 51));
+        jButton31.setText("-");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+
+        jButton32.setForeground(new java.awt.Color(51, 51, 51));
+        jButton32.setText("+");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel46.setText("17 SR");
+
+        jTextField16.setColumns(3);
+        jTextField16.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField16.setText("1");
+        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField16ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox16.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox16.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox16.setText("Add to Cart");
+        jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox16ActionPerformed(evt);
+            }
+        });
+
+        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/Mikado California Poppy Seeds - 1 gram - Perennial.jpg"))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("SEEDS");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel45)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jCheckBox16)
+                        .addGroup(jPanel16Layout.createSequentialGroup()
+                            .addComponent(jButton31)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton32)))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel46)))
+                .addGap(47, 47, 47))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addComponent(jLabel47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel45)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton32)
+                    .addComponent(jTextField16)
+                    .addComponent(jButton31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox16)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel48.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel48.setText("CALENDULA ZEOLIGHTS SEEDS");
+
+        jButton33.setBackground(new java.awt.Color(255, 255, 255));
+        jButton33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton33.setForeground(new java.awt.Color(51, 51, 51));
+        jButton33.setText("-");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+
+        jButton34.setForeground(new java.awt.Color(51, 51, 51));
+        jButton34.setText("+");
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel49.setText("17 SR");
+
+        jTextField17.setColumns(3);
+        jTextField17.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField17.setText("1");
+        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField17ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox17.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jCheckBox17.setForeground(new java.awt.Color(51, 51, 51));
+        jCheckBox17.setText("Add to Cart");
+        jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox17ActionPerformed(evt);
+            }
+        });
+
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/Zeolights Calendula Seeds - 750 mg - Annual.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox17)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel49)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addComponent(jButton33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton34)))
+                .addGap(47, 47, 47))
+            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel48)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel48)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton34)
+                    .addComponent(jTextField17)
+                    .addComponent(jButton33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox17)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 215, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 352, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel1);
+
+        jMenu1.setText("CATEGORIES");
+
+        jMenuItem1.setText("FLOWERS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("SEEDS");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("TOOLS");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("CART");
+
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeedsImgs/cart-png-clipart-icon-gio-hang-11563002651riwxf1kiv5.png"))); // NOI18N
+        jMenuItem4.setText("GO TO CART");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField8.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField8.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        doconnect();
+        if(jCheckBox8.isSelected()){
+     try{ 
+         query="select * from product where p_id = 111 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField8.getText());
+     int cost = Integer.parseInt(jTextField8.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox8.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =111");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                          
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+          amount= Integer.parseInt(jTextField14.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField14.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        doconnect();
+        if(jCheckBox14.isSelected()){
+     try{ 
+         query="select * from product where p_id = 1010 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField14.getText());
+     int cost = Integer.parseInt(jTextField14.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("P_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox14.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =1010");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField15.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField15.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        doconnect();
+        if(jCheckBox15.isSelected()){
+     try{ 
+         query="select * from product where p_id = 1111 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField15.getText());
+     int cost = Integer.parseInt(jTextField15.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox15.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =1111");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField9.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField9.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        doconnect();
+        if(jCheckBox9.isSelected()){
+     try{ 
+         query="select * from product where p_id = 777 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField9.getText());
+     int cost = Integer.parseInt(jTextField9.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox9.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =777");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                          
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField16.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField16.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+         doconnect();
+        if(jCheckBox16.isSelected()){
+     try{ 
+         query="select * from product where p_id = 888 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField16.getText());
+     int cost = Integer.parseInt(jTextField16.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox16.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =888");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField17.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField17.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       doconnect();
+        if(jCheckBox17.isSelected()){
+     try{ 
+         query="select * from product where p_id = 999";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField17.getText());
+     int cost = Integer.parseInt(jTextField17.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox17.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =999");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField18.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField18.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox18ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        doconnect();
+        if(jCheckBox18.isSelected()){
+     try{ 
+         query="select * from product where p_id= 1212 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField18.getText());
+     int cost = Integer.parseInt(jTextField18.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox18.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =1212");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField19.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField19.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox19ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+      doconnect();
+        if(jCheckBox19.isSelected()){
+     try{ 
+         query="select * from product where p_id = 222 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField19.getText());
+     int cost = Integer.parseInt(jTextField19.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox19.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =222");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField20.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField20.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox20ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       doconnect();
+        if(jCheckBox20.isSelected()){
+     try{ 
+         query="select * from product where p_id = 333 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField20.getText());
+     int cost = Integer.parseInt(jTextField20.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox20.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =333");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField21.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField21.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox21ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        doconnect();
+        if(jCheckBox21.isSelected()){
+     try{ 
+         query="select * from product where p_id =444";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField21.getText());
+     int cost = Integer.parseInt(jTextField21.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox21.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =444");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField22.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField22.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox22ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        doconnect();
+        if(jCheckBox22.isSelected()){
+     try{ 
+         query="select * from product where p_id =555 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField22.getText());
+     int cost = Integer.parseInt(jTextField22.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox22.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =555");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        amount= Integer.parseInt(jTextField23.getText());
+        if(amount>0)amount-=1; 
+            else    amount=0;
+        jTextField23.setText(Integer.toString(amount));
+    }                                         
+
+    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jCheckBox23ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+     doconnect();
+        if(jCheckBox23.isSelected()){
+     try{ 
+         query="select * from product where p_id = 666 ";
+     resultset = statement.executeQuery(query);
+     resultset.next();
+     String name = resultset.getString("name");
+     amount = Integer.parseInt(jTextField23.getText());
+     int cost = Integer.parseInt(jTextField23.getText()) * (resultset.getInt("cost"));
+     String id = resultset.getString("p_id");
+     query="select * from cart";
+     resultset=statement.executeQuery(query);
+     resultset.next();
+     currentRow= resultset.getRow();
+     resultset.moveToInsertRow();
+     resultset.updateInt("no", no);
+     resultset.updateString("C_ID", id);
+     resultset.updateString("name", name);
+     resultset.updateInt("amount", amount);
+     resultset.updateInt("cost", cost);
+     
+     resultset.insertRow();
+     
+     resultset.close();
+     statement.close();
+       
+     }catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+        }
+     else 
+     if(!jCheckBox23.isSelected()){
+        doconnect();
+     try{
+     resultset = statement.executeQuery("select * from cart where C_ID =666");
+     resultset.next();
+     resultset.deleteRow();
+     resultset.close();
+     statement.close();
+     }
+         
+        catch (SQLException ex){
+     JOptionPane.showMessageDialog(this, ex);
+     }
+     }
+    }                                           
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+         
+        FlowersSection Flowersframe = new FlowersSection();
+        Flowersframe.setVisible(true);
+        this.setVisible(false);
+    }                                          
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+        ToolsSection Toolsframe  =  new ToolsSection();
+
+           Toolsframe.setVisible(true);
+        this.setVisible(false);
+    }                                          
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField8.getText())+1;
+         jTextField8.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField14.getText())+1;
+         jTextField14.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField15.getText())+1;
+         jTextField15.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField18.getText())+1;
+         jTextField18.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField19.getText())+1;
+         jTextField19.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField20.getText())+1;
+         jTextField20.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField21.getText())+1;
+         jTextField21.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField22.getText())+1;
+         jTextField22.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField23.getText())+1;
+         jTextField23.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField9.getText())+1;
+         jTextField9.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField16.getText())+1;
+         jTextField16.setText(Integer.toString(amount));
+    }                                         
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+         amount= Integer.parseInt(jTextField17.getText())+1;
+         jTextField17.setText(Integer.toString(amount));
+    }                                         
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+       
+        Cart  c= new Cart();
+        c.setVisible(true);
+        this.dispose();
+    }                                          
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(SeedsSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(SeedsSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(SeedsSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SeedsSection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new SeedsSection().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
+    private javax.swing.JButton jButton38;
+    private javax.swing.JButton jButton39;
+    private javax.swing.JButton jButton40;
+    private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
+    private javax.swing.JButton jButton44;
+    private javax.swing.JButton jButton45;
+    private javax.swing.JButton jButton46;
+    private javax.swing.JCheckBox jCheckBox14;
+    private javax.swing.JCheckBox jCheckBox15;
+    private javax.swing.JCheckBox jCheckBox16;
+    private javax.swing.JCheckBox jCheckBox17;
+    private javax.swing.JCheckBox jCheckBox18;
+    private javax.swing.JCheckBox jCheckBox19;
+    private javax.swing.JCheckBox jCheckBox20;
+    private javax.swing.JCheckBox jCheckBox21;
+    private javax.swing.JCheckBox jCheckBox22;
+    private javax.swing.JCheckBox jCheckBox23;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    // End of variables declaration                   
+}
